@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devnex | Webové aplikace & MVP na míru</title>
+    <meta name="description" content="Vyvíjíme webové aplikace, MVP a mobilní aplikace pro B2B klienty. Spolehlivý partner pro váš digitální produkt.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>Devnex<span class="logo-bracket">/&gt;</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#sluzby">Služby</a></li>
+                <li><a href="#proces">Jak pracujeme</a></li>
+                <li><a href="#projekty">Projekty</a></li>
+                <li><a href="#reference">Reference</a></li>
+                <li><a href="#kontakt" class="btn btn-primary">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    Přijímáme nové projekty
+                </div>
+                <h1>Vyvíjíme <span class="gradient-text">webové aplikace</span> a MVP pro váš business</h1>
+                <p class="hero-subtitle">Pomáháme firmám přeměnit nápady na funkční digitální produkty. Od prvního návrhu až po spuštění.</p>
+                <div class="hero-cta">
+                    <a href="#kontakt" class="btn btn-primary btn-lg">Nezávazná konzultace</a>
+                    <a href="#projekty" class="btn btn-ghost btn-lg">Zobrazit projekty</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Let zkušeností</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Dokončených projektů</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Spokojených klientů</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="file-name">projekt.config.ts</span>
+                    </div>
+                    <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">projekt</span> = {
+  <span class="property">klient</span>: <span class="string">"Vaše firma"</span>,
+  <span class="property">typ</span>: <span class="string">"webová aplikace"</span>,
+  <span class="property">technologie</span>: [
+    <span class="string">"React"</span>,
+    <span class="string">"Node.js"</span>,
+    <span class="string">"PostgreSQL"</span>
+  ],
+  <span class="property">status</span>: <span class="string">"v realizaci"</span> <span class="cursor">|</span>
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="sluzby" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Služby</span>
+                <h2>Co pro vás můžeme vytvořit</h2>
+                <p>Specializujeme se na vývoj na míru pro firmy, které potřebují spolehlivé řešení.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Webové aplikace</h3>
+                    <p>Komplexní webové aplikace na míru — interní systémy, dashboardy, SaaS platformy, e-commerce řešení.</p>
+                    <ul class="service-features">
+                        <li>React / Next.js / Vue</li>
+                        <li>NestJS / Go / Ruby on Rails</li>
+                        <li>PostgreSQL / MongoDB</li>
+                    </ul>
+                </div>
+                <div class="service-card featured">
+                    <div class="featured-badge">Nejčastější</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>MVP & Prototypy</h3>
+                    <p>Rychlé ověření vašeho nápadu. Funkční prototyp během týdnů, ne měsíců. Ideální pro startupy a nové produkty.</p>
+                    <ul class="service-features">
+                        <li>Rychlý time-to-market</li>
+                        <li>Iterativní vývoj</li>
+                        <li>Škálovatelná architektura</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Mobilní aplikace</h3>
+                    <p>Cross-platform mobilní aplikace pro iOS a Android z jednoho kódu. Nativní výkon, jednotný design.</p>
+                    <ul class="service-features">
+                        <li>React Native</li>
+                        <li>iOS & Android</li>
+                        <li>Publikace do storů</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="proces" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Proces</span>
+                <h2>Jak spolupráce probíhá</h2>
+                <p>Transparentní proces od prvního kontaktu po předání hotového produktu.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Úvodní konzultace</h3>
+                        <p>Probereme váš projekt, cíle a požadavky. Zdarma a nezávazně posoudíme realizovatelnost a navrhneme řešení.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Návrh & Specifikace</h3>
+                        <p>Připravíme detailní specifikaci, wireframy a technický návrh. Budete přesně vědět, co vznikne.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Vývoj & Iterace</h3>
+                        <p>Agilní vývoj s pravidelnými demo ukázkami. Máte přehled o postupu a možnost upravit směr.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Testování & Spuštění</h3>
+                        <p>Důkladné testování, nasazení na produkci a předání dokumentace. Podpora i po spuštění.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects/Case Studies Section -->
+    <section id="projekty" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Projekty</span>
+                <h2>Vybrané realizace</h2>
+                <p>Ukázky projektů, na kterých jsme pracovali.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>Screenshot projektu</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Web App</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <h3>Interní systém pro logistiku</h3>
+                        <p>Webová aplikace pro správu zásilek a sledování dodávek v reálném čase pro logistickou společnost.</p>
+                        <ul class="project-results">
+                            <li><strong>40%</strong> úspora času při zpracování</li>
+                            <li><strong>500+</strong> denních uživatelů</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>Screenshot projektu</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">MVP</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <h3>SaaS platforma pro HR</h3>
+                        <p>MVP pro startup — platforma pro správu zaměstnanců, docházku a hodnocení výkonu.</p>
+                        <ul class="project-results">
+                            <li><strong>8 týdnů</strong> od nápadu po launch</li>
+                            <li><strong>15</strong> firem v beta testu</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>Screenshot projektu</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <h3>Mobilní aplikace pro eventy</h3>
+                        <p>Cross-platform aplikace pro organizátory akcí — program, notifikace, networking mezi účastníky.</p>
+                        <ul class="project-results">
+                            <li><strong>10 000+</strong> stažení</li>
+                            <li><strong>4.7★</strong> hodnocení v storech</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+            <div class="projects-note">
+                <p>Další projekty a detailnější case studies rádi představíme při osobní konzultaci.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reference" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Reference</span>
+                <h2>Co říkají klienti</h2>
+                <p>Zpětná vazba od firem, se kterými jsme spolupracovali.</p>
+            </div>
+            <div class="testimonials-grid">
+                <blockquote class="testimonial-card">
+                    <p class="testimonial-text">"Profesionální přístup od začátku do konce. Aplikace byla dodána v termínu a přesně podle specifikace. Spolupráci mohu jen doporučit."</p>
+                    <footer class="testimonial-author">
+                        <div class="author-avatar">JN</div>
+                        <div class="author-info">
+                            <cite>Jan Novák</cite>
+                            <span>CEO, LogiTrans s.r.o.</span>
+                        </div>
+                    </footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p class="testimonial-text">"Skvělá komunikace a schopnost pochopit naše potřeby. MVP nám pomohlo získat první zákazníky a ověřit business model."</p>
+                    <footer class="testimonial-author">
+                        <div class="author-avatar">PS</div>
+                        <div class="author-info">
+                            <cite>Petra Svobodová</cite>
+                            <span>Founder, HRflow</span>
+                        </div>
+                    </footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p class="testimonial-text">"Oceňuji transparentní přístup k cenám a časům. Vždy jsme věděli, na čem se pracuje a kolik to bude stát."</p>
+                    <footer class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <cite>Martin Král</cite>
+                            <span>CTO, EventPro</span>
+                        </div>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <span class="section-tag">// Kontakt</span>
+                    <h2>Pojďme spolupracovat</h2>
+                    <p>Máte projekt na mysli? Napište nám a domluvíme se na nezávazné konzultaci.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:info@devnex.cz" class="contact-method">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@devnex.cz</span>
+                        </a>
+                        <a href="tel:+420123456789" class="contact-method">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+420 123 456 789</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="contact-method">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Jméno</label>
+                        <input type="text" id="name" name="name" required placeholder="Jan Novák">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Typ projektu</label>
+                        <select id="project" name="project">
+                            <option value="">Vyberte typ projektu</option>
+                            <option value="webapp">Webová aplikace</option>
+                            <option value="mvp">MVP / Prototyp</option>
+                            <option value="mobile">Mobilní aplikace</option>
+                            <option value="other">Jiné</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Zpráva</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Popište váš projekt nebo nápad..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-full">Odeslat zprávu</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-bracket">&lt;</span>Devnex<span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p>Vývoj webových a mobilních aplikací na míru.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#sluzby">Služby</a>
+                    <a href="#projekty">Projekty</a>
+                    <a href="#reference">Reference</a>
+                    <a href="#kontakt">Kontakt</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Devnex. Všechna práva vyhrazena.</p>
+                <p>IČO: 12345678</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

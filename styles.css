@@ -857,11 +857,17 @@ section {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 32px;
+    gap: 14px;
+    padding: 28px;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
 }
 
 .form-group {
@@ -1088,6 +1094,10 @@ section {
     .testimonial-card,
     .contact-form {
         padding: 24px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
     .pricing-content {

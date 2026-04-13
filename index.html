@@ -328,38 +328,36 @@
                             </svg>
                             <span>+420 123 456 789</span>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="contact-method">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
                     </div>
                 </div>
                 <form class="contact-form" action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Jméno</label>
-                        <input type="text" id="name" name="name" required placeholder="Jan Novák">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Jméno</label>
+                            <input type="text" id="name" name="name" required placeholder="Jan Novák">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Název firmy</label>
+                            <input type="text" id="company" name="company" placeholder="Firma s.r.o.">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
-                    </div>
-                    <div class="form-group">
-                        <label for="project">Typ projektu</label>
-                        <select id="project" name="project">
-                            <option value="">Vyberte typ projektu</option>
-                            <option value="webapp">Webová aplikace</option>
-                            <option value="mvp">MVP / Prototyp</option>
-                            <option value="mobile">Mobilní aplikace</option>
-                            <option value="other">Jiné</option>
-                        </select>
+                        <label for="budget">Rozpočet</label>
+                        <input type="text" id="budget" name="budget" placeholder="např. 100 000 Kč">
                     </div>
                     <div class="form-group">
                         <label for="message">Zpráva</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="Popište váš projekt nebo nápad..."></textarea>
+                        <textarea id="message" name="message" rows="3" required placeholder="Popište váš projekt nebo nápad..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-full">Odeslat zprávu</button>
                 </form>

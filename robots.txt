@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devnex.cz/sitemap.xml
+Sitemap: https://hoza.dev/sitemap.xml

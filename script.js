@@ -1,5 +1,5 @@
 // ============================================
-// DEVNEX — Interactive Features
+// HOZA.DEV — Interactive Features
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -254,7 +254,7 @@ function initFormHandling() {
         const formData = new FormData(form);
 
         try {
-            // DEVNEX:TODO — Web3Forms endpoint funguje, ale potřebuje platný access_key
+            // HOZA.DEV:TODO — Web3Forms endpoint funguje, ale potřebuje platný access_key
             const accessKey = form.querySelector('input[name="access_key"]');
             if (accessKey && accessKey.value === 'YOUR_ACCESS_KEY') {
                 // Placeholder mode — simulate submission
@@ -375,7 +375,7 @@ function initCookieConsent() {
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
 
-    const consent = localStorage.getItem('devnex_cookie_consent');
+    const consent = localStorage.getItem('hoza_dev_cookie_consent');
     if (consent) {
         // Already consented, apply settings
         const settings = JSON.parse(consent);
@@ -420,7 +420,7 @@ function initCookieConsent() {
     });
 
     function saveConsent(settings) {
-        localStorage.setItem('devnex_cookie_consent', JSON.stringify(settings));
+        localStorage.setItem('hoza_dev_cookie_consent', JSON.stringify(settings));
     }
 
     function hideBanner() {
@@ -432,10 +432,10 @@ function initCookieConsent() {
 }
 
 function loadAnalytics() {
-    // DEVNEX:TODO — odkomentovat po aktivaci Plausible domény
+    // HOZA.DEV:TODO — odkomentovat po aktivaci Plausible domény
     // const script = document.createElement('script');
     // script.defer = true;
-    // script.dataset.domain = 'devnex.cz';
+    // script.dataset.domain = 'hoza.dev';
     // script.src = 'https://plausible.io/js/script.js';
     // document.head.appendChild(script);
 }

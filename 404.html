@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Stránka nenalezena | Devnex</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .error-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 160px 32px 120px;
+        }
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-style: italic;
+            color: var(--accent);
+            line-height: 1;
+            opacity: 0.15;
+            margin-bottom: -20px;
+        }
+        .error-content h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+        .error-content p {
+            color: var(--text-secondary);
+            font-weight: 300;
+            font-size: 1.05rem;
+            margin-bottom: 36px;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dot-grid" aria-hidden="true"></div>
+
+    <nav class="nav scrolled" role="navigation" aria-label="Hlavni navigace">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-mark">D</span>
+                <span class="logo-text">Devnex</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="error-page">
+        <main class="error-content">
+            <div class="error-code" aria-hidden="true">404</div>
+            <h1>Tato stránka <em>neexistuje</em></h1>
+            <p>Možná byla přesunuta, nebo jste zadali špatnou adresu. Nic se neděje — vrátíme se zpět.</p>
+            <a href="/" class="btn btn-primary btn-lg">
+                <span>Zpět na hlavní stránku</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Devnex. Všechna práva vyhrazena.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

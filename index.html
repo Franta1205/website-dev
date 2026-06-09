@@ -3,144 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devnex | Webové aplikace & MVP na míru</title>
-    <meta name="description" content="Vyvíjíme webové aplikace, MVP a mobilní aplikace pro B2B klienty. Spolehlivý partner pro váš digitální produkt.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Devnex | MVP pro zakladatele — Fintech, AI, Consumer</title>
+    <meta name="description" content="Stavíme MVP pro zakladatele. Fintech, AI, consumer — tři live produkty v produkci. Devnex, Praha.">
+
+    <!-- DEVNEX:TODO — nahradit canonical URL před spuštěním -->
+    <link rel="canonical" href="https://devnex.cz">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Devnex">
+    <meta property="og:title" content="Devnex — Stavíme MVP pro zakladatele. Fintech, AI, consumer.">
+    <meta property="og:description" content="Stavíme MVP pro zakladatele. Fintech, AI, consumer — tři live produkty v produkci. Devnex, Praha.">
+    <!-- DEVNEX:TODO — vytvořit og-image.png (1200×630) a nahrát do rootu -->
+    <meta property="og:image" content="https://devnex.cz/og-image.png">
+    <meta property="og:url" content="https://devnex.cz">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Devnex — Stavíme MVP pro zakladatele. Fintech, AI, consumer.">
+    <meta name="twitter:description" content="Stavíme MVP pro zakladatele. Fintech, AI, consumer — tři live produkty v produkci. Devnex, Praha.">
+    <!-- DEVNEX:TODO — vytvořit og-image.png (1200×630) a nahrát do rootu -->
+    <meta name="twitter:image" content="https://devnex.cz/og-image.png">
+
+    <!-- DEVNEX:TODO — vytvořit a nahrát favicon soubory -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD: ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Devnex",
+        "description": "Digitální studio — stavíme MVP pro zakladatele. Fintech, AI, consumer aplikace.",
+        "url": "https://devnex.cz",
+        "email": "info@devnex.cz",
+        "areaServed": ["Czechia", "EU", "UK"],
+        "serviceType": ["MVP Development", "Fintech Development", "AI Development", "Mobile Development"],
+        "sameAs": [
+            "<!-- DEVNEX:TODO — doplnit LinkedIn URL -->"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Praha",
+            "addressCountry": "CZ"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "<!-- DEVNEX:TODO — doplnit jméno -->"
+        }
+    }
+    </script>
+
+    <!-- DEVNEX:TODO — aktivovat Plausible po nastavení domény a cookie souhlasu -->
+    <!--
+    <script defer data-domain="devnex.cz" src="https://plausible.io/js/script.js"></script>
+    -->
 </head>
 <body>
+
+    <!-- Skip to content — accessibility -->
+    <a href="#hlavni-obsah" class="skip-to-content">Přeskočit na obsah</a>
+
+    <!-- Dot grid background -->
+    <div class="dot-grid" aria-hidden="true"></div>
+
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Hlavní navigace">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-bracket">&lt;</span>Devnex<span class="logo-bracket">/&gt;</span>
+                <span class="logo-mark">D</span>
+                <span class="logo-text">Devnex</span>
             </a>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-right">
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="#sluzby">Služby</a></li>
-                <li><a href="#proces">Jak pracujeme</a></li>
-                <li><a href="#projekty">Projekty</a></li>
-                <li><a href="#reference">Reference</a></li>
-                <li><a href="#kontakt" class="btn btn-primary">Kontakt</a></li>
-            </ul>
+            <div class="nav-right" id="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#sluzby">Služby</a></li>
+                    <li><a href="#proces">Proces</a></li>
+                    <li><a href="#projekty">Case studies</a></li>
+                </ul>
+                <a href="#kontakt" class="btn btn-primary">Domluvit konzultaci</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <main id="hlavni-obsah">
+
+    <!-- ============================================================
+         HERO — 3 varianty, odkomentuj jednu, zakomentuj ostatní.
+
+         VARIANTA A (proof-led) — aktuálně aktivní:
+    ============================================================ -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
+        <div class="container hero-grid">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="pulse"></span>
-                    Přijímáme nové projekty
+                <div class="hero-eyebrow">
+                    <div class="eyebrow-line"></div>
+                    <span>Digitální studio pro ambiciózní zakladatele</span>
                 </div>
-                <h1>Vyvíjíme <span class="gradient-text">webové aplikace</span> a MVP pro váš business</h1>
-                <p class="hero-subtitle">Pomáháme firmám přeměnit nápady na funkční digitální produkty. Od prvního návrhu až po spuštění.</p>
-                <div class="hero-cta">
-                    <a href="#kontakt" class="btn btn-primary btn-lg">Nezávazná konzultace</a>
-                    <a href="#projekty" class="btn btn-ghost btn-lg">Zobrazit projekty</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Let zkušeností</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">30+</span>
-                        <span class="stat-label">Dokončených projektů</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Spokojených klientů</span>
-                    </div>
+
+                <!-- ======= HERO VARIANTA A (proof-led) — AKTIVNÍ ======= -->
+                <h1>Z nápadu k produktu<br>za <em>6–10 týdnů</em></h1>
+                <p class="hero-subtitle">Webové, mobilní a AI aplikace pro zakladatele, kteří potřebují dodat — ne prezentovat.</p>
+
+                <!-- ======= HERO VARIANTA B (founder-direct) — NEAKTIVNÍ
+                <h1>Od nápadu k <em>produkčnímu MVP</em><br>za 6–10 týdnů</h1>
+                <p class="hero-subtitle">Studio s fintech zázemím. Stavíme webové, mobilní a AI aplikace pro zakladatele, kteří potřebují skutečně dodat.</p>
+                ======= KONEC VARIANTA B ======= -->
+
+                <!-- ======= HERO VARIANTA C (credibility-first) — NEAKTIVNÍ
+                <h1>Tři <em>live produkty</em>.<br>Váš MVP další.</h1>
+                <p class="hero-subtitle">Stavíme MVP od fintech přes AI po consumer aplikace. Malý tým, velký rozsah — žádný zbytečný overhead.</p>
+                ======= KONEC VARIANTA C ======= -->
+
+                <div class="hero-actions">
+                    <a href="#kontakt" class="btn btn-primary btn-lg">
+                        <span>Nezávazná konzultace</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                    <a href="#projekty" class="btn btn-outline btn-lg">Naše práce</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-window">
-                    <div class="code-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="file-name">projekt.config.ts</span>
-                    </div>
-                    <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">projekt</span> = {
-  <span class="property">klient</span>: <span class="string">"Vaše firma"</span>,
-  <span class="property">typ</span>: <span class="string">"webová aplikace"</span>,
-  <span class="property">technologie</span>: [
-    <span class="string">"React"</span>,
-    <span class="string">"Node.js"</span>,
-    <span class="string">"PostgreSQL"</span>
-  ],
-  <span class="property">status</span>: <span class="string">"v realizaci"</span> <span class="cursor">|</span>
+                <div class="hero-card hero-card--main">
+                    <div class="card-terminal">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-title">devnex.config.ts</span>
+                        </div>
+                        <pre class="terminal-code"><code><span class="syn-key">const</span> <span class="syn-var">projekt</span> = {
+  <span class="syn-prop">klient</span>: <span class="syn-str">"Váš startup"</span>,
+  <span class="syn-prop">typ</span>: <span class="syn-str">"MVP"</span>,
+  <span class="syn-prop">tech</span>: [<span class="syn-str">"React"</span>, <span class="syn-str">"Node.js"</span>],
+  <span class="syn-prop">status</span>: <span class="syn-str">"v produkci"</span> <span class="syn-cursor">|</span>
 };</code></pre>
+                    </div>
+                </div>
+                <div class="hero-card hero-card--float">
+                    <span class="float-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <div class="float-text">
+                        <span class="float-label">Stav projektu</span>
+                        <span class="float-value">V produkci</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEVNEX:EDIT — stats bar: odkomentuj / zakomentuj celý blok podle potřeby -->
+        <div class="hero-stats-bar">
+            <div class="container">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">let v regulovaném fintech</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-suffix"></span>
+                        <span class="stat-label">odvětví — fintech, AI, consumer</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="6">0</span>
+                        <span class="stat-suffix">–10</span>
+                        <span class="stat-label">týdnů do produkce</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section — Productized Offers -->
     <section id="sluzby" class="services">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// Služby</span>
-                <h2>Co pro vás můžeme vytvořit</h2>
-                <p>Specializujeme se na vývoj na míru pro firmy, které potřebují spolehlivé řešení.</p>
+            <div class="section-intro">
+                <span class="section-number">01</span>
+                <div class="section-intro-text">
+                    <h2>Co pro vás<br>můžeme <em>postavit</em></h2>
+                    <p>Productized MVP balíčky s transparentními cenami. Víte předem, co dostanete a za kolik.</p>
+                </div>
             </div>
+
+            <!-- Tier 1: Productized MVPs -->
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <article class="service-card">
+                    <div class="service-index">01</div>
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                             <line x1="8" y1="21" x2="16" y2="21"></line>
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h3>Webové aplikace</h3>
-                    <p>Komplexní webové aplikace na míru — interní systémy, dashboardy, SaaS platformy, e-commerce řešení.</p>
-                    <ul class="service-features">
-                        <li>React / Next.js / Vue</li>
-                        <li>NestJS / Go / Ruby on Rails</li>
-                        <li>PostgreSQL / MongoDB</li>
+                    <h3>Webová MVP</h3>
+                    <p>Frontend + backend, autentizace, platby, nasazení na produkci. Kompletní webová aplikace připravená na první uživatele.</p>
+                    <ul class="service-stack">
+                        <li>6 týdnů</li>
+                        <li>React / Next.js + Node.js</li>
+                        <li>Auth, platby, deploy</li>
                     </ul>
-                </div>
-                <div class="service-card featured">
-                    <div class="featured-badge">Nejčastější</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
+                </article>
+                <article class="service-card service-card--featured">
+                    <div class="service-badge">Nejčastější</div>
+                    <div class="service-index">02</div>
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
                         </svg>
                     </div>
-                    <h3>MVP & Prototypy</h3>
-                    <p>Rychlé ověření vašeho nápadu. Funkční prototyp během týdnů, ne měsíců. Ideální pro startupy a nové produkty.</p>
-                    <ul class="service-features">
-                        <li>Rychlý time-to-market</li>
-                        <li>Iterativní vývoj</li>
-                        <li>Škálovatelná architektura</li>
+                    <h3>AI MVP</h3>
+                    <p>Integrace AI modelu, dashboard, landing page. Od prototypu po funkční produkt s reálnými uživateli.</p>
+                    <ul class="service-stack">
+                        <li>8 týdnů</li>
+                        <li>React + Python / Node.js</li>
+                        <li>AI model + dashboard + landing</li>
                     </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                </article>
+                <article class="service-card">
+                    <div class="service-index">03</div>
+                    <div class="service-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
                             <line x1="12" y1="18" x2="12.01" y2="18"></line>
                         </svg>
                     </div>
-                    <h3>Mobilní aplikace</h3>
-                    <p>Cross-platform mobilní aplikace pro iOS a Android z jednoho kódu. Nativní výkon, jednotný design.</p>
-                    <ul class="service-features">
-                        <li>React Native</li>
-                        <li>iOS & Android</li>
-                        <li>Publikace do storů</li>
+                    <h3>Mobilní MVP</h3>
+                    <p>iOS + Android z jednoho kódu přes React Native. Backend, publikace do obou storů.</p>
+                    <ul class="service-stack">
+                        <li>8 týdnů</li>
+                        <li>React Native + Node.js</li>
+                        <li>iOS + Android + App Store</li>
                     </ul>
+                </article>
+            </div>
+
+            <!-- Fintech MVP — full width -->
+            <div class="services-fintech">
+                <article class="service-card service-card--fintech">
+                    <div class="service-fintech-inner">
+                        <div>
+                            <div class="service-index">04</div>
+                            <div class="service-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                            </div>
+                            <h3>Fintech MVP</h3>
+                            <p>Platby, KYC, regulované prostředí. Zkušenosti z vývoje živé fintech aplikace s Visa partnerstvím.</p>
+                        </div>
+                        <div class="service-fintech-right">
+                            <ul class="service-stack">
+                                <li>10 týdnů</li>
+                                <li>Platby / KYC / compliance</li>
+                                <li>Regulovaný fintech stack</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Tier 2: Retainers -->
+            <div class="services-retainers">
+                <h3 class="retainers-title">Nebo dlouhodobá spolupráce</h3>
+                <div class="retainers-grid">
+                    <article class="retainer-card">
+                        <h4>Build partner</h4>
+                        <p>4 dny/týden dedikovaného vývoje na vašem produktu.</p>
+                    </article>
+                    <article class="retainer-card">
+                        <h4>Fractional CTO</h4>
+                        <p>2 dny/týden. Technické vedení, architektura, fintech expertise.</p>
+                    </article>
                 </div>
             </div>
         </div>
@@ -149,156 +304,219 @@
     <!-- Process Section -->
     <section id="proces" class="process">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// Proces</span>
-                <h2>Jak spolupráce probíhá</h2>
-                <p>Transparentní proces od prvního kontaktu po předání hotového produktu.</p>
+            <div class="section-intro">
+                <span class="section-number">02</span>
+                <div class="section-intro-text">
+                    <h2>Jak spolupráce<br><em>probíhá</em></h2>
+                    <p>Transparentní proces od prvního hovoru po předání hotového produktu.</p>
+                </div>
             </div>
-            <div class="process-timeline">
+            <div class="process-steps">
                 <div class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Úvodní konzultace</h3>
-                        <p>Probereme váš projekt, cíle a požadavky. Zdarma a nezávazně posoudíme realizovatelnost a navrhneme řešení.</p>
+                    <div class="step-head">
+                        <span class="step-num">01</span>
+                        <div class="step-line"></div>
                     </div>
+                    <h3>Úvodní konzultace</h3>
+                    <p>Probereme váš projekt, cíle a požadavky. Zdarma a nezávazně posoudíme realizovatelnost.</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Návrh & Specifikace</h3>
-                        <p>Připravíme detailní specifikaci, wireframy a technický návrh. Budete přesně vědět, co vznikne.</p>
+                    <div class="step-head">
+                        <span class="step-num">02</span>
+                        <div class="step-line"></div>
                     </div>
+                    <h3>Návrh & Specifikace</h3>
+                    <p>Připravíme detailní specifikaci, wireframy a technický návrh. Budete přesně vědět, co vznikne.</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Vývoj & Iterace</h3>
-                        <p>Agilní vývoj s pravidelnými demo ukázkami. Máte přehled o postupu a možnost upravit směr.</p>
+                    <div class="step-head">
+                        <span class="step-num">03</span>
+                        <div class="step-line"></div>
                     </div>
+                    <h3>Vývoj & Iterace</h3>
+                    <p>Agilní vývoj s pravidelnými demo ukázkami. Máte přehled o postupu a možnost upravit směr.</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Testování & Spuštění</h3>
-                        <p>Důkladné testování, nasazení na produkci a předání dokumentace. Podpora i po spuštění.</p>
+                    <div class="step-head">
+                        <span class="step-num">04</span>
+                        <div class="step-line"></div>
                     </div>
+                    <h3>Spuštění & Podpora</h3>
+                    <p>Důkladné testování, nasazení na produkci a předání dokumentace. Podpora i po spuštění.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects/Case Studies Section -->
+    <!-- Projects Section -->
     <section id="projekty" class="projects">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// Projekty</span>
-                <h2>Vybrané realizace</h2>
-                <p>Ukázky projektů, na kterých jsme pracovali.</p>
+            <div class="section-intro">
+                <span class="section-number">03</span>
+                <div class="section-intro-text">
+                    <h2>Case<br><em>studies</em></h2>
+                </div>
             </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Screenshot projektu</span>
+
+            <!-- DEVNEX:SECTION-PROJECTS — duplikuj tento blok pro nový projekt -->
+            <div class="projects-grid projects-grid--hero">
+
+                <!-- Hero project: Rychlá Peněženka -->
+                <article class="project-card project-card--hero">
+                    <div class="project-image project-image--fintech">
+                        <div class="project-type-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                            Mobile / Fintech
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-body">
                         <div class="project-tags">
-                            <span class="tag">Web App</span>
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
+                            <span>React Native</span>
+                            <span>Fintech</span>
+                            <span>iOS</span>
+                            <span>Android</span>
                         </div>
-                        <h3>Interní systém pro logistiku</h3>
-                        <p>Webová aplikace pro správu zásilek a sledování dodávek v reálném čase pro logistickou společnost.</p>
-                        <ul class="project-results">
-                            <li><strong>40%</strong> úspora času při zpracování</li>
-                            <li><strong>500+</strong> denních uživatelů</li>
-                        </ul>
+                        <h3>Rychlá Peněženka</h3>
+                        <p>Česká debetní karta s cashbackem. Visa partnerství, integrace Vodafone / T-Mobile / O2. Mobilní aplikace pro iOS i Android v React Native.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <strong>Live</strong>
+                                <span>App Store + Google Play</span>
+                            </div>
+                            <div class="metric">
+                                <strong>Visa</strong>
+                                <span>partnerská platforma</span>
+                            </div>
+                            <div class="metric">
+                                <strong>Produkce</strong>
+                                <span>reální uživatelé, reálné peníze</span>
+                            </div>
+                        </div>
+                        <a href="https://rychlapenezenka.cz" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Navštívit live
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
                     </div>
                 </article>
+
+                <!-- NeuroVision AI -->
                 <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Screenshot projektu</span>
+                    <div class="project-image project-image--ai">
+                        <div class="project-type-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            AI / SaaS
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-body">
                         <div class="project-tags">
-                            <span class="tag">MVP</span>
-                            <span class="tag">Next.js</span>
-                            <span class="tag">PostgreSQL</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>AI/ML</span>
                         </div>
-                        <h3>SaaS platforma pro HR</h3>
-                        <p>MVP pro startup — platforma pro správu zaměstnanců, docházku a hodnocení výkonu.</p>
-                        <ul class="project-results">
-                            <li><strong>8 týdnů</strong> od nápadu po launch</li>
-                            <li><strong>15</strong> firem v beta testu</li>
-                        </ul>
+                        <h3>NeuroVision AI</h3>
+                        <p>AI platforma predikující vizuální pozornost a perceptuální dopad pro designové týmy. MVP dodané end-to-end.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <strong>MVP shipped</strong>
+                                <span>web app + AI modely</span>
+                            </div>
+                            <div class="metric">
+                                <strong>Fundraising</strong>
+                                <span>probíhá první kolo</span>
+                            </div>
+                        </div>
+                        <a href="https://neurovision-ai.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Navštívit live
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
                     </div>
                 </article>
+
+                <!-- Uncover Prague -->
                 <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>Screenshot projektu</span>
+                    <div class="project-image project-image--consumer">
+                        <div class="project-type-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Consumer / Brand
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-body">
                         <div class="project-tags">
-                            <span class="tag">Mobile</span>
-                            <span class="tag">React Native</span>
-                            <span class="tag">Firebase</span>
+                            <span>React</span>
+                            <span>Bilingual</span>
+                            <span>Brand</span>
                         </div>
-                        <h3>Mobilní aplikace pro eventy</h3>
-                        <p>Cross-platform aplikace pro organizátory akcí — program, notifikace, networking mezi účastníky.</p>
-                        <ul class="project-results">
-                            <li><strong>10 000+</strong> stažení</li>
-                            <li><strong>4.7★</strong> hodnocení v storech</li>
-                        </ul>
+                        <h3>Uncover Prague</h3>
+                        <p>Privátní members' club v Praze. Bilingvální CS/EN web, brand-led design, 500+ členů, 52 dinnerů ročně, 38 partnerských podniků.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <strong>500+</strong>
+                                <span>členů</span>
+                            </div>
+                            <div class="metric">
+                                <strong>CS/EN</strong>
+                                <span>bilingvální</span>
+                            </div>
+                        </div>
+                        <a href="https://uncover.cz" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Navštívit live
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
                     </div>
                 </article>
-            </div>
-            <div class="projects-note">
-                <p>Další projekty a detailnější case studies rádi představíme při osobní konzultaci.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="reference" class="testimonials">
+    <!-- Testimonials Section — HIDDEN by default, add class "testimonials--visible" to show -->
+    <section id="reference" class="testimonials testimonials--hidden">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// Reference</span>
-                <h2>Co říkají klienti</h2>
-                <p>Zpětná vazba od firem, se kterými jsme spolupracovali.</p>
+            <div class="section-intro">
+                <span class="section-number">04</span>
+                <div class="section-intro-text">
+                    <h2>Co říkají<br>naši <em>klienti</em></h2>
+                    <p>Zpětná vazba od klientů, se kterými jsme spolupracovali.</p>
+                </div>
             </div>
             <div class="testimonials-grid">
-                <blockquote class="testimonial-card">
-                    <p class="testimonial-text">"Profesionální přístup od začátku do konce. Aplikace byla dodána v termínu a přesně podle specifikace. Spolupráci mohu jen doporučit."</p>
-                    <footer class="testimonial-author">
-                        <div class="author-avatar">JN</div>
-                        <div class="author-info">
-                            <cite>Jan Novák</cite>
-                            <span>CEO, LogiTrans s.r.o.</span>
+                <!-- DEVNEX:TODO — nahradit placeholder reálným testimonialem od zakladatele Rychlá Peněženka -->
+                <blockquote class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"<!-- DEVNEX:EDIT — vložit reálný citát od zakladatele Rychlé Peněženky -->"</p>
+                    </div>
+                    <footer class="testimonial-footer">
+                        <div class="testimonial-avatar"><!-- DEVNEX:EDIT — iniciály --></div>
+                        <div>
+                            <cite><!-- DEVNEX:EDIT — jméno --></cite>
+                            <span><!-- DEVNEX:EDIT — pozice, firma --></span>
                         </div>
                     </footer>
                 </blockquote>
-                <blockquote class="testimonial-card">
-                    <p class="testimonial-text">"Skvělá komunikace a schopnost pochopit naše potřeby. MVP nám pomohlo získat první zákazníky a ověřit business model."</p>
-                    <footer class="testimonial-author">
-                        <div class="author-avatar">PS</div>
-                        <div class="author-info">
-                            <cite>Petra Svobodová</cite>
-                            <span>Founder, HRflow</span>
+
+                <!-- DEVNEX:TODO — nahradit placeholder reálným testimonialem od zakladatele NeuroVision -->
+                <blockquote class="testimonial testimonial--accent">
+                    <div class="testimonial-content">
+                        <p>"<!-- DEVNEX:EDIT — vložit reálný citát od zakladatele NeuroVision -->"</p>
+                    </div>
+                    <footer class="testimonial-footer">
+                        <div class="testimonial-avatar"><!-- DEVNEX:EDIT — iniciály --></div>
+                        <div>
+                            <cite><!-- DEVNEX:EDIT — jméno --></cite>
+                            <span><!-- DEVNEX:EDIT — pozice, firma --></span>
                         </div>
                     </footer>
                 </blockquote>
-                <blockquote class="testimonial-card">
-                    <p class="testimonial-text">"Oceňuji transparentní přístup k cenám a časům. Vždy jsme věděli, na čem se pracuje a kolik to bude stát."</p>
-                    <footer class="testimonial-author">
-                        <div class="author-avatar">MK</div>
-                        <div class="author-info">
-                            <cite>Martin Král</cite>
-                            <span>CTO, EventPro</span>
+
+                <!-- DEVNEX:TODO — nahradit placeholder reálným testimonialem od Uncover Prague -->
+                <blockquote class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"<!-- DEVNEX:EDIT — vložit reálný citát od zakladatele Uncover Prague -->"</p>
+                    </div>
+                    <footer class="testimonial-footer">
+                        <div class="testimonial-avatar"><!-- DEVNEX:EDIT — iniciály --></div>
+                        <div>
+                            <cite><!-- DEVNEX:EDIT — jméno --></cite>
+                            <span><!-- DEVNEX:EDIT — pozice, firma --></span>
                         </div>
                     </footer>
                 </blockquote>
@@ -309,85 +527,168 @@
     <!-- Contact Section -->
     <section id="kontakt" class="contact">
         <div class="container">
-            <div class="contact-wrapper">
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <span class="section-tag">// Kontakt</span>
-                    <h2>Pojďme spolupracovat</h2>
-                    <p>Máte projekt na mysli? Napište nám a domluvíme se na nezávazné konzultaci.</p>
-                    <div class="contact-methods">
-                        <a href="mailto:info@devnex.cz" class="contact-method">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span>info@devnex.cz</span>
+                    <span class="section-number">05</span>
+                    <h2>Pojďme<br><em>spolupracovat</em></h2>
+                    <p>Máte projekt na mysli? Zarezervujte si konzultaci nebo nám napište — ozveme se do 24 hodin.</p>
+
+                    <!-- Calendly CTA — primary -->
+                    <div class="calendly-cta">
+                        <!-- DEVNEX:TODO — nahradit # skutečným Calendly odkazem -->
+                        <a href="#" class="btn btn-primary btn-lg btn-full calendly-btn" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <span>Rezervovat 30min konzultaci</span>
                         </a>
-                        <a href="tel:+420123456789" class="contact-method">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span>+420 123 456 789</span>
+                        <span class="calendly-note">Zdarma a nezávazně</span>
+                    </div>
+
+                    <div class="contact-details">
+                        <a href="mailto:info@devnex.cz" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <div>
+                                <span class="contact-link-label">E-mail</span>
+                                <span class="contact-link-value">info@devnex.cz</span>
+                            </div>
+                        </a>
+                        <!-- DEVNEX:TODO — nahradit telefonní číslo skutečným před spuštěním -->
+                        <a href="tel:+420000000000" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <div>
+                                <span class="contact-link-label">Telefon</span>
+                                <!-- DEVNEX:EDIT — replace before launch -->
+                                <span class="contact-link-value">+420 XXX XXX XXX</span>
+                            </div>
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" action="#" method="POST">
+
+                <!-- DEVNEX:TODO — nastavit Web3Forms API klíč (access_key) -->
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                    <!-- DEVNEX:EDIT — nahradit YOUR_ACCESS_KEY skutečným Web3Forms API klíčem -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="Nová poptávka z devnex.cz">
+                    <input type="hidden" name="from_name" value="Devnex Web">
+                    <!-- Honeypot -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Jméno</label>
-                            <input type="text" id="name" name="name" required placeholder="Jan Novák">
+                        <div class="form-field">
+                            <label for="name">Jméno <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true" placeholder="Jan Novák">
                         </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
+                        <div class="form-field">
+                            <label for="email">E-mail <span class="required" aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true" placeholder="jan@firma.cz">
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="phone">Telefon</label>
                             <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789">
                         </div>
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="company">Název firmy</label>
                             <input type="text" id="company" name="company" placeholder="Firma s.r.o.">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="budget">Rozpočet</label>
-                        <input type="text" id="budget" name="budget" placeholder="např. 100 000 Kč">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="project-type">Typ projektu</label>
+                            <select id="project-type" name="project_type">
+                                <option value="" disabled selected>Vyberte typ...</option>
+                                <option value="web-mvp">Webová MVP</option>
+                                <option value="ai-mvp">AI MVP</option>
+                                <option value="mobile-mvp">Mobilní MVP</option>
+                                <option value="fintech-mvp">Fintech MVP</option>
+                                <option value="retainer">Retainer (Build partner / CTO)</option>
+                                <option value="other">Něco jiného</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="budget">Rozpočet</label>
+                            <select id="budget" name="budget">
+                                <option value="" disabled selected>Vyberte rozsah...</option>
+                                <option value="do-250k">do 250 000 Kč</option>
+                                <option value="250-500k">250 000 – 500 000 Kč</option>
+                                <option value="500k-1m">500 000 – 1 000 000 Kč</option>
+                                <option value="nad-1m">nad 1 000 000 Kč</option>
+                                <option value="nevim">Zatím nevím</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Zpráva</label>
-                        <textarea id="message" name="message" rows="3" required placeholder="Popište váš projekt nebo nápad..."></textarea>
+                    <div class="form-field">
+                        <label for="message">Zpráva <span class="required" aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="4" required aria-required="true" placeholder="Popište váš projekt nebo nápad..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-full">Odeslat zprávu</button>
+                    <p class="form-note">Nebo raději <a href="#" class="calendly-inline-link">zarezervujte konzultaci</a> — je to rychlejší.</p>
+                    <button type="submit" class="btn btn-primary btn-lg btn-full">
+                        <span>Odeslat zprávu</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <span class="logo-bracket">&lt;</span>Devnex<span class="logo-bracket">/&gt;</span>
-                    </a>
-                    <p>Vývoj webových a mobilních aplikací na míru.</p>
-                </div>
-                <div class="footer-links">
+            <div class="footer-top">
+                <a href="#" class="logo">
+                    <span class="logo-mark">D</span>
+                    <span class="logo-text">Devnex</span>
+                </a>
+                <nav class="footer-nav" aria-label="Patička">
                     <a href="#sluzby">Služby</a>
                     <a href="#projekty">Projekty</a>
-                    <a href="#reference">Reference</a>
                     <a href="#kontakt">Kontakt</a>
-                </div>
+                    <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+                    <a href="obchodni-podminky.html">Obchodní podmínky</a>
+                </nav>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Devnex. Všechna práva vyhrazena.</p>
-                <p>IČO: 12345678</p>
+                <!-- DEVNEX:TODO — doplnit IČO a právní formu před spuštěním -->
+                <p>Devnex je obchodní značka <!-- DEVNEX:EDIT — vložit název právnické osoby (IČO nebo s.r.o.) --></p>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Nastavení cookies" aria-modal="false">
+        <div class="cookie-banner-inner">
+            <p class="cookie-text">Tento web používá cookies pro analýzu návštěvnosti. Více v <a href="ochrana-osobnich-udaju.html">ochraně osobních údajů</a>.</p>
+            <div class="cookie-actions">
+                <button class="btn btn-cookie-settings" id="cookie-settings-btn">Nastavení</button>
+                <button class="btn btn-cookie-reject" id="cookie-reject">Pouze nezbytné</button>
+                <button class="btn btn-cookie-accept" id="cookie-accept">Souhlasím</button>
+            </div>
+        </div>
+        <!-- Cookie settings detail (hidden by default) -->
+        <div class="cookie-settings-detail" id="cookie-settings-detail" hidden>
+            <div class="cookie-setting-row">
+                <div>
+                    <strong>Nezbytné cookies</strong>
+                    <p>Nutné pro fungování webu. Nelze vypnout.</p>
+                </div>
+                <span class="cookie-toggle-always">Vždy aktivní</span>
+            </div>
+            <div class="cookie-setting-row">
+                <div>
+                    <strong>Analytické cookies</strong>
+                    <p>Pomáhají pochopit, jak web používáte (Plausible Analytics).</p>
+                </div>
+                <label class="cookie-toggle">
+                    <input type="checkbox" id="cookie-analytics">
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+            <button class="btn btn-cookie-save" id="cookie-save">Uložit nastavení</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

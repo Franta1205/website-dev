@@ -1273,6 +1273,23 @@ section {
 
 .form-field .required { color: var(--accent); }
 
+.form-consent {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.form-consent a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.form-consent a:hover {
+    opacity: 0.8;
+}
+
 .form-field input,
 .form-field textarea,
 .form-field select {

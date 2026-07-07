@@ -1651,7 +1651,11 @@ section {
 }
 
 @media (max-width: 768px) {
-    section { padding: 80px 0; }
+    section { padding: 64px 0; }
+
+    .container { padding: 0 20px; }
+
+    .nav-container { padding: 16px 20px; }
 
     .nav-right {
         display: none;
@@ -1660,7 +1664,7 @@ section {
         left: 0;
         right: 0;
         flex-direction: column;
-        padding: 24px 32px;
+        padding: 24px 20px;
         background: rgba(12, 12, 14, 0.96);
         backdrop-filter: blur(24px);
         border-bottom: 1px solid var(--border);
@@ -1685,6 +1689,12 @@ section {
         width: 100%;
     }
 
+    .hero-visual {
+        display: none;
+    }
+
+    .hero-stats-bar { margin-top: 48px; }
+
     .services-grid,
     .projects-grid--hero,
     .testimonials-grid,
@@ -1692,17 +1702,21 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .process-step { padding: 0; }
+
     .retainers-grid { grid-template-columns: 1fr; }
 
     .stats-row {
         flex-direction: column;
-        gap: 24px;
+        gap: 20px;
     }
 
     .stat-divider {
         width: 40px;
         height: 1px;
     }
+
+    .stat-item { justify-content: center; }
 
     .footer-top {
         flex-direction: column;
@@ -1719,23 +1733,38 @@ section {
     }
 
     .cookie-banner {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
         max-width: none;
     }
 }
 
 @media (max-width: 480px) {
-    .container { padding: 0 20px; }
-    .hero { padding: 130px 0 0; }
+    .container { padding: 0 16px; }
+    .hero { padding: 110px 0 0; }
 
     .hero-actions { flex-direction: column; }
     .btn-lg { width: 100%; }
+
+    .hero-stats-bar { margin-top: 40px; padding: 28px 0; }
+
+    .stat-number { font-size: 2.2rem; }
+
+    .section-intro { margin-bottom: 48px; }
 
     .form-row { grid-template-columns: 1fr; }
     .contact-form { padding: 24px; }
     .service-card { padding: 24px 20px; }
     .testimonial { padding: 24px; }
     .retainer-card { padding: 20px; }
+
+    .project-body { padding: 20px; }
+
+    .project-metrics { gap: 14px; }
+
+    .footer-nav {
+        gap: 12px;
+        font-size: 0.78rem;
+    }
 }

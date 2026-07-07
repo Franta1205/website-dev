@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>hoza.dev — FB Ads</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Each slide = one full viewport, centered */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Scale ad to fit screen — JS sets this */
+        .ad-scaler {
+            transform-origin: top left;
+        }
+
+        /* ── BASE AD ── */
+        .ad {
+            width: 1080px;
+            height: 1080px;
+            background: #0C0C0E;
+            position: relative;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .ad::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .ad > * { position: relative; z-index: 1; }
+
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-mark {
+            width: 34px; height: 34px;
+            background: #C8FF00;
+            color: #0C0C0E;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800; font-size: 19px;
+            border-radius: 9px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .logo-text {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700; font-size: 17px;
+            color: #EDEDEF; letter-spacing: -0.3px;
+        }
+        .tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 5px 12px;
+            background: rgba(200,255,0,0.07);
+            border: 1px solid rgba(200,255,0,0.18);
+            border-radius: 100px;
+            color: #C8FF00; font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+        }
+        .tag-dot { width: 6px; height: 6px; background: #C8FF00; border-radius: 50%; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #C8FF00; color: #0C0C0E;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700; font-size: 17px;
+            padding: 16px 32px; border-radius: 100px; letter-spacing: -0.3px; cursor: pointer;
+        }
+        .cta-btn svg { width: 18px; height: 18px; }
+
+
+        /* ═══ AD 3 ═══ */
+        .ad3 { padding: 64px; }
+        .ad3 .glow {
+            position: absolute; width: 500px; height: 500px;
+            background: rgba(200,255,0,0.09); border-radius: 50%;
+            filter: blur(100px); top: -150px; right: -100px; z-index: 0;
+        }
+        .ad3-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 56px; }
+        .ad3-headline {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 66px; font-weight: 800; line-height: 1.0;
+            letter-spacing: -2.5px; color: #EDEDEF; margin-bottom: 20px;
+        }
+        .ad3-headline em { font-style: normal; color: #C8FF00; }
+        .ad3-sub { font-size: 19px; color: #A0A0AB; line-height: 1.55; max-width: 680px; margin-bottom: 48px; }
+        .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+        .compare-col {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px; padding: 28px 24px;
+        }
+        .compare-col.good { border-color: rgba(200,255,0,0.2); background: rgba(200,255,0,0.04); }
+        .compare-col-title {
+            font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+            text-transform: uppercase; margin-bottom: 20px; color: #56565F;
+        }
+        .compare-col.good .compare-col-title { color: #C8FF00; }
+        .compare-row {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 15px; color: #A0A0AB;
+            padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .compare-row:last-child { border-bottom: none; }
+        .compare-col.good .compare-row { color: #EDEDEF; }
+        .icon-bad { color: #FF4444; font-size: 14px; flex-shrink: 0; }
+        .icon-good { color: #C8FF00; font-size: 14px; flex-shrink: 0; }
+        .ad3-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .url-hint { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #56565F; }
+
+
+        /* ═══ AD 4 ═══ */
+        .ad4 { padding: 64px; }
+        .ad4 .glow {
+            position: absolute; width: 600px; height: 600px;
+            background: rgba(200,255,0,0.07); border-radius: 50%;
+            filter: blur(120px); bottom: -200px; left: 50%; transform: translateX(-50%); z-index: 0;
+        }
+        .ad4 .glow2 {
+            position: absolute; width: 300px; height: 300px;
+            background: rgba(200,255,0,0.1); border-radius: 50%;
+            filter: blur(80px); top: 100px; right: 50px; z-index: 0;
+        }
+        .ad4-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
+        .ad4-center { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+        .ad4-big { font-family: 'Bricolage Grotesque', sans-serif; font-size: 52px; font-weight: 800; color: #A0A0AB; letter-spacing: -1px; margin-bottom: 4px; }
+        .ad4-bigger { font-family: 'Bricolage Grotesque', sans-serif; font-size: 130px; font-weight: 800; line-height: 0.9; letter-spacing: -6px; color: #EDEDEF; margin-bottom: 8px; }
+        .ad4-bigger em { font-style: normal; color: #C8FF00; }
+        .ad4-desc { font-size: 20px; color: #A0A0AB; margin-bottom: 56px; line-height: 1.5; }
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; width: 100%; margin-bottom: 64px; }
+        .step-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 24px 20px;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .step-card.live {
+            border-color: rgba(200,255,0,0.25);
+            background: rgba(200,255,0,0.05);
+        }
+        .step-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px; color: #56565F; letter-spacing: 0.5px;
+        }
+        .step-card.live .step-num { color: #C8FF00; }
+        .step-name {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 20px; font-weight: 700; color: #EDEDEF; letter-spacing: -0.5px;
+        }
+        .step-card.live .step-name { color: #C8FF00; }
+        .step-desc { font-size: 13px; color: #56565F; line-height: 1.5; }
+        .step-card.live .step-desc { color: #A0A0AB; }
+        .ad4-bottom { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .ad4-sub { font-size: 15px; color: #56565F; }
+
+
+        /* ═══ AD 5 ═══ */
+        .ad5 { padding: 64px; }
+        .ad5 .glow {
+            position: absolute; width: 500px; height: 500px;
+            background: rgba(200,255,0,0.1); border-radius: 50%;
+            filter: blur(100px); top: -100px; right: -150px; z-index: 0;
+        }
+        .ad5-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 52px; }
+        .ad5-headline { font-family: 'Bricolage Grotesque', sans-serif; font-size: 72px; font-weight: 800; line-height: 0.97; letter-spacing: -3px; color: #EDEDEF; margin-bottom: 22px; }
+        .ad5-headline em { font-style: normal; color: #C8FF00; }
+        .ad5-sub { font-size: 19px; color: #A0A0AB; line-height: 1.55; max-width: 620px; margin-bottom: 44px; }
+        .terminal { background: #0E0E12; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; margin-bottom: 44px; }
+        .terminal-bar { display: flex; align-items: center; gap: 7px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); }
+        .t-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .t-dot:nth-child(1) { background: #FF5F57; }
+        .t-dot:nth-child(2) { background: #FFBD2E; }
+        .t-dot:nth-child(3) { background: #28C840; }
+        .t-file { margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #56565F; }
+        .terminal pre { padding: 24px 28px; font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.8; }
+        .s-comment { color: #56565F; }
+        .s-key { color: #C8FF00; }
+        .s-str { color: #A8FF78; }
+        .s-prop { color: #79B8FF; }
+        .s-num { color: #F99157; }
+        .s-ok { color: #34D399; }
+        .s-cursor { display: inline-block; width: 2px; height: 18px; background: #C8FF00; vertical-align: middle; animation: blink 1s step-end infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+        .ad5-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .deliverables { display: flex; gap: 10px; }
+        .d-pill { padding: 7px 14px; border: 1px solid rgba(255,255,255,0.09); border-radius: 100px; font-size: 13px; color: #A0A0AB; }
+
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1 — AD 3 -->
+        <div class="slide active" id="slide-1">
+            <div class="ad-scaler">
+                <div class="ad ad3">
+                    <div class="glow"></div>
+                    <div class="ad3-top">
+                        <div class="logo"><span class="logo-mark">D</span><span class="logo-text">hoza.dev</span></div>
+                        <span class="tag"><span class="tag-dot"></span> Praha · Remote</span>
+                    </div>
+                    <div class="ad3-headline">Žádná agentura.<br>Žádný overhead.<br><em>Jen váš produkt live.</em></div>
+                    <p class="ad3-sub">Víte jak to chodí — prezentace, kickoff, tři měsíce ticha. U nás ne. Demo každý týden, produkce za 6–10 týdnů.</p>
+                    <div class="compare">
+                        <div class="compare-col">
+                            <div class="compare-col-title">Agentura</div>
+                            <div class="compare-row"><span class="icon-bad">✕</span> Kickoff meeting #5</div>
+                            <div class="compare-row"><span class="icon-bad">✕</span> „Dodáme za 6 měsíců"</div>
+                            <div class="compare-row"><span class="icon-bad">✕</span> 3 projektové manažery</div>
+                            <div class="compare-row"><span class="icon-bad">✕</span> Faktury za prezentace</div>
+                            <div class="compare-row"><span class="icon-bad">✕</span> Tři týdny mlčení</div>
+                        </div>
+                        <div class="compare-col good">
+                            <div class="compare-col-title">hoza.dev</div>
+                            <div class="compare-row"><span class="icon-good">✓</span> Demo každý týden</div>
+                            <div class="compare-row"><span class="icon-good">✓</span> 6–10 týdnů do produkce</div>
+                            <div class="compare-row"><span class="icon-good">✓</span> Jeden tým, přímý kontakt</div>
+                            <div class="compare-row"><span class="icon-good">✓</span> Platíte za kód, ne meeting</div>
+                            <div class="compare-row"><span class="icon-good">✓</span> Update každý den</div>
+                        </div>
+                    </div>
+                    <div class="ad3-bottom">
+                        <span class="url-hint">hoza.dev</span>
+                        <a class="cta-btn">Domluvit konzultaci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 — AD 4 -->
+        <div class="slide" id="slide-2">
+            <div class="ad-scaler">
+                <div class="ad ad4">
+                    <div class="glow"></div>
+                    <div class="glow2"></div>
+                    <div class="ad4-top">
+                        <div class="logo"><span class="logo-mark">D</span><span class="logo-text">hoza.dev</span></div>
+                        <span class="tag"><span class="tag-dot"></span> Dostupné termíny</span>
+                    </div>
+                    <div class="ad4-center">
+                        <div class="ad4-big">Dokud čekáte,</div>
+                        <div class="ad4-bigger">někdo jiný<br>váš nápad<br><em>spustí.</em></div>
+                        <p class="ad4-desc">MVP nemusí trvat rok. Od konzultace po produkci<br>za 6–10 týdnů — web, mobil nebo AI.</p>
+                        <div class="steps">
+                            <div class="step-card">
+                                <span class="step-num">01</span>
+                                <span class="step-name">Konzultace</span>
+                                <span class="step-desc">Probereme váš projekt, cíle a technické požadavky.</span>
+                            </div>
+                            <div class="step-card">
+                                <span class="step-num">02</span>
+                                <span class="step-name">Specifikace</span>
+                                <span class="step-desc">Wireframy, technický návrh a pevný scope.</span>
+                            </div>
+                            <div class="step-card">
+                                <span class="step-num">03</span>
+                                <span class="step-name">Vývoj</span>
+                                <span class="step-desc">Demo každý týden. Iterujeme rychle.</span>
+                            </div>
+                            <div class="step-card live">
+                                <span class="step-num">04 → 6–10 týdnů</span>
+                                <span class="step-name">Live ✓</span>
+                                <span class="step-desc">Váš produkt v produkci. Reální uživatelé.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ad4-bottom">
+                        <span class="ad4-sub">Praha · Remote · info@hoza.dev</span>
+                        <a class="cta-btn">Nezávazná konzultace <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 — AD 5 -->
+        <div class="slide" id="slide-3">
+            <div class="ad-scaler">
+                <div class="ad ad5">
+                    <div class="glow"></div>
+                    <div class="ad5-top">
+                        <div class="logo"><span class="logo-mark">D</span><span class="logo-text">hoza.dev</span></div>
+                        <span class="tag"><span class="tag-dot"></span> AI MVP · 8 týdnů</span>
+                    </div>
+                    <div class="ad5-headline">Máte AI nápad.<br><em>Chybí vám tým.</em></div>
+                    <p class="ad5-sub">Postavíme AI MVP za 8 týdnů — integrace modelu, dashboard, landing page. Produkční kód, žádné prototypy.</p>
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+                            <span class="t-file">vas-ai-projekt.config.ts</span>
+                        </div>
+                        <pre><code><span class="s-comment">// váš nápad → produkce za 8 týdnů</span>
+<span class="s-key">const</span> mvp = {
+  <span class="s-prop">typ</span>:      <span class="s-str">"AI MVP"</span>,
+  <span class="s-prop">model</span>:    <span class="s-str">"GPT-4o / Claude / vlastní"</span>,
+  <span class="s-prop">stack</span>:    [<span class="s-str">"React"</span>, <span class="s-str">"Python"</span>, <span class="s-str">"Node.js"</span>],
+  <span class="s-prop">dodani</span>:   <span class="s-num">8</span>, <span class="s-comment">// týdnů</span>
+  <span class="s-prop">status</span>:   <span class="s-ok">"v produkci"</span> <span class="s-cursor"></span>
+};</code></pre>
+                    </div>
+                    <div class="ad5-bottom">
+                        <div class="deliverables">
+                            <span class="d-pill">AI integrace</span>
+                            <span class="d-pill">Dashboard</span>
+                            <span class="d-pill">Landing page</span>
+                            <span class="d-pill">Deploy</span>
+                        </div>
+                        <a class="cta-btn">Domluvit hovor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        function scale() {
+            const adSize = 1080;
+            const s = Math.min(window.innerWidth, window.innerHeight) / adSize;
+            document.querySelectorAll('.ad-scaler').forEach(el => {
+                el.style.transform = `scale(${s})`;
+                el.style.transformOrigin = 'center center';
+            });
+        }
+        scale();
+        window.addEventListener('resize', scale);
+    </script>
+</body>
+</html>
